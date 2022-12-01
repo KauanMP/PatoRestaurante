@@ -7,7 +7,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url": "/Event/GetAll"
+            "url": "/SocialEvent/GetAll"
         },
         "order": [[1, 'asc']],
         "columns": [
@@ -23,13 +23,13 @@ function loadDataTable() {
                 "render": function (data) {
                     return `
                         <div class="text-xs text-secondary mb-0">
-                            <a href="/Event/Edit?id=${data}" title="Editar">
+                            <a href="/SocialEvent/Edit?id=${data}" title="Editar">
                                 <span class="material-icons">edit</span>
                             </a> &nbsp &nbsp
-                            <a href="/Event/Details?id=${data}" title="Detalhes">
+                            <a href="/SocialEvent/Details?id=${data}" title="Detalhes">
                                 <span class="material-icons">info</span>
                             </a> &nbsp &nbsp
-                            <a href="javascript:void(0)" onclick="Delete('/Event/Delete?id=${data}')" title="Excluir">
+                            <a href="javascript:void(0)" onclick="Delete('/SocialEvent/Delete?id=${data}')" title="Excluir">
                                 <span class="material-icons">delete</span>
                             </a> &nbsp &nbsp
                         </div>

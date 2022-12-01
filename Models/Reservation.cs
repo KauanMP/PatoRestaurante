@@ -8,10 +8,10 @@ namespace PatoRestaurant.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public UInt16 Id { get; set; }
-
+        public UInt16 Id { get; set; } 
+        
         [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Informe seu {0}")]
+        [Required(ErrorMessage = "Informe o seu {0}")]
         [StringLength(60, ErrorMessage = "O {0} deve possuir no máximo {1} caracteres")]
         public string Name { get; set; }
 
@@ -20,7 +20,7 @@ namespace PatoRestaurant.Models
         public DateTime ReservationDate { get; set; }
 
         [Display(Name = "Celular")]
-        [Required(ErrorMessage = "Informe seu {0}")]
+        [Required(ErrorMessage = "Informe o seu {0}")]
         [StringLength(20, ErrorMessage = "O {0} deve possuir no máximo {1} caracteres")]
         public string Phone { get; set; }
 
@@ -30,6 +30,7 @@ namespace PatoRestaurant.Models
 
         [Display(Name = "E-mail")]
         [StringLength(100, ErrorMessage = "O {0} deve possuir no máximo {1} caracteres")]
+        [EmailAddress(ErrorMessage = "Informe um e-mail válido!")]
         public string Email { get; set; }
 
         [Display(Name = "Data de Cadastro")]
